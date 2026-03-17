@@ -1,0 +1,82 @@
+@page "/projects"
+
+<PageTitle>Projects - Shem M. Dualos Portfolio</PageTitle>
+
+<h1 class="section-title border-bottom pb-2 mb-4">Featured Projects</h1>
+
+<div class="row">
+    <!-- Project 1: Web Development -->
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm project-card">
+            <div class="project-img-placeholder d-flex align-items-center justify-content-center bg-warning text-white">
+                <i class="bi bi-code-slash display-1"></i>
+            </div>
+            <div class="card-body">
+                <h5 class="fw-bold">Web UI Development</h5>
+                <p class="card-text text-muted">Developed complex front-end user interfaces for various web applications during tenure at Digital Media Solution.</p>
+                <div class="mb-3">
+                    <span class="badge bg-dark">HTML5</span>
+                    <span class="badge bg-dark">CSS3</span>
+                    <span class="badge bg-dark">Bootstrap 4</span>
+                    <span class="badge bg-dark">Responsive Design</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 2: Cybersecurity -->
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm project-card">
+            <div class="project-img-placeholder d-flex align-items-center justify-content-center bg-dark text-warning">
+                <i class="bi bi-shield-check display-1"></i>
+            </div>
+            <div class="card-body">
+                <h5 class="fw-bold">Threat Hunting & Security Ops</h5>
+                <p class="card-text text-muted">Implementation and optimization of SentinelOne for proactive threat detection and mitigation at MinebeaMitsumi Inc.</p>
+                <div class="mb-3">
+                    <span class="badge bg-warning text-dark">SentinelOne</span>
+                    <span class="badge bg-warning text-dark">SIEM</span>
+                    <span class="badge bg-warning text-dark">Network Security</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 3: Network Operations -->
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm project-card">
+            <div class="project-img-placeholder d-flex align-items-center justify-content-center bg-secondary text-white">
+                <i class="bi bi-diagram-3 display-1"></i>
+            </div>
+            <div class="card-body">
+                <h5 class="fw-bold">NOC Monitoring System</h5>
+                <p class="card-text text-muted">Configured and managed comprehensive monitoring tools for network and security systems triage at Centrics Networks.</p>
+                <div class="mb-3">
+                    <span class="badge bg-dark">Network Monitoring</span>
+                    <span class="badge bg-dark">Incident Response</span>
+                    <span class="badge bg-dark">SOAR</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .section-title {
+        color: #e67e22;
+        font-weight: 600;
+    }
+    .project-card {
+        transition: transform 0.3s ease;
+        overflow: hidden;
+    }
+    .project-card:hover {
+        transform: translateY(-10px);
+    }
+    .project-img-placeholder {
+        height: 200px;
+    }
+    .badge {
+        font-weight: 500;
+    }
+</style>

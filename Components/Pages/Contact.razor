@@ -1,0 +1,121 @@
+@page "/contact"
+@using System.IO
+@using System.ComponentModel.DataAnnotations
+@inject IWebHostEnvironment Env
+
+<PageTitle>Contact - Shem M. Dualos Portfolio</PageTitle>
+
+<h1 class="section-title border-bottom pb-2 mb-4">Contact Me</h1>
+
+<div class="row">
+    <div class="col-md-6 mb-5">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+                <h5 class="fw-bold mb-4">Send a Message</h5>
+
+                @if (isSubmitted)
+                {
+                    <div class="alert alert-success">
+                        Thank you for your message! I'll get back to you soon.
+                    </div>
+                }
+
+                <EditForm Model="contactForm" OnValidSubmit="HandleSubmit" FormName="contactForm">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Name</label>
+                        <InputText class="form-control" @bind-Value="contactForm.Name" placeholder="Your Name" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Email</label>
+                        <InputText type="email" class="form-control" @bind-Value="contactForm.Email" placeholder="name@example.com" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Message</label>
+                        <InputTextArea class="form-control" rows="5" @bind-Value="contactForm.Message" placeholder="Your Message" />
+                    </div>
+                    <button type="submit" class="btn btn-warning w-100 fw-bold">Send Message</button>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm bg-warning text-dark mb-4">
+            <div class="card-body">
+                <h5 class="fw-bold mb-3"><i class="bi bi-info-circle me-2"></i> Contact Information</h5>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-3"><i class="bi bi-envelope-fill me-2"></i> shemdualos@gmail.com</li>
+                    <li class="mb-3"><i class="bi bi-telephone-fill me-2"></i> +639476527235</li>
+                    <li class="mb-3"><i class="bi bi-geo-alt-fill me-2"></i> Poblacion, Daanbantayan, Cebu</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+                <h5 class="fw-bold mb-3">Professional Presence</h5>
+                <div class="d-flex gap-3">
+                    <a href="#" class="btn btn-outline-dark btn-sm rounded-circle"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="btn btn-outline-dark btn-sm rounded-circle"><i class="bi bi-github"></i></a>
+                    <a href="#" class="btn btn-outline-dark btn-sm rounded-circle"><i class="bi bi-globe"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .section-title {
+        color: #e67e22;
+        font-weight: 600;
+    }
+    .btn-warning {
+        background-color: #f39c12;
+        border-color: #f39c12;
+        color: white;
+    }
+    .btn-warning:hover {
+        background-color: #e67e22;
+        border-color: #e67e22;
+        color: white;
+    }
+</style>
+
+@code {
+    private ContactMessage contactForm = new();
+    private bool isSubmitted = false;
+
+    private async Task HandleSubmit()
+    {
+        try
+        {
+            var filePath = Path.Combine(Env.ContentRootPath, "contacts.txt");
+            var content = $"Date: {DateTime.Now}\nName: {contactForm.Name}\nEmail: {contactForm.Email}\nMessage: {contactForm.Message}\n------------------------------\n";
+            await File.AppendAllTextAsync(filePath, content);
+
+            isSubmitted = true;
+            contactForm = new(); // Reset the form
+        }
+        catch (Exception ex)
+        {
+            // Handle error (e.g., logging or showing a message)
+            Console.WriteLine($"Error saving contact: {ex.Message}");
+        }
+    }
+
+    public class ContactMessage
+    {
+        [Required(ErrorMessage = "Name is required")]
+        public string Name { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Invalid email address")]
+        public string Email { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Message is required")]
+        public string Message { get; set; } = string.Empty;
+    }
+}
