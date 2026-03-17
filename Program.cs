@@ -1,4 +1,4 @@
-using portfolio.Components;
+using ShemResumeApp.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -50,9 +50,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/shem/Documents/push/portfolio/portfolio.csproj",
-      "projectName": "portfolio",
-      "projectPath": "/home/shem/Documents/push/portfolio/portfolio.csproj",
+      "projectUniqueName": "/home/shem/Documents/push/portfolio/ShemResumeApp.csproj",
+      "projectName": "ShemResumeApp",
+      "projectPath": "/home/shem/Documents/push/portfolio/ShemResumeApp.csproj",
       "packagesPath": "/home/shem/.nuget/packages/",
       "outputPath": "/home/shem/Documents/push/portfolio/obj/",
       "projectStyle": "PackageReference",

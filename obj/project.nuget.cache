@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "reuDHvCSFNM=",
+  "dgSpecHash": "OF9Cs1vZPE4=",
   "success": true,
-  "projectFilePath": "/home/shem/Documents/push/portfolio/portfolio.csproj",
+  "projectFilePath": "/home/shem/Documents/push/portfolio/ShemResumeApp.csproj",
   "expectedPackageFiles": [
     "/home/shem/.nuget/packages/microsoft.aspnetcore.app.internal.assets/10.0.4/microsoft.aspnetcore.app.internal.assets.10.0.4.nupkg.sha512"
   ],

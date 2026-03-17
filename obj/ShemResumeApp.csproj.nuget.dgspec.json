@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "/home/shem/Documents/push/portfolio/portfolio.csproj": {}
+    "/home/shem/Documents/push/portfolio/ShemResumeApp.csproj": {}
   },
   "projects": {
-    "/home/shem/Documents/push/portfolio/portfolio.csproj": {
+    "/home/shem/Documents/push/portfolio/ShemResumeApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/shem/Documents/push/portfolio/portfolio.csproj",
-        "projectName": "portfolio",
-        "projectPath": "/home/shem/Documents/push/portfolio/portfolio.csproj",
+        "projectUniqueName": "/home/shem/Documents/push/portfolio/ShemResumeApp.csproj",
+        "projectName": "ShemResumeApp",
+        "projectPath": "/home/shem/Documents/push/portfolio/ShemResumeApp.csproj",
         "packagesPath": "/home/shem/.nuget/packages/",
         "outputPath": "/home/shem/Documents/push/portfolio/obj/",
         "projectStyle": "PackageReference",
